@@ -57,12 +57,13 @@ def Хамгийн_их_зарлага():
     
     with open("Зардал.txt", "r") as file:
         for baraaune in file:
-            
             parts = baraaune.strip().split("-")
-            amount = int(parts[2])
-            amounts.append(amount)
             
-    return max(amounts)  
+            name = parts[1].strip()
+            amount = int(parts[2])
+            amounts.append((name, amount))
+            
+    return max(amounts)    
 
 def Зардал_цэвэрлэх():
     Батлах = input("Бүх зардал устгах уу? yes/no: ")

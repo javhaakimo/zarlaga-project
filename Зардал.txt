@@ -1,0 +1,15 @@
+hool - tsuivan - 9000
+hool - huurga - 9000
+hool - shorlog - 9000
+transport - bux - 5000
+transport - taxi - 10000
+transport - fuel - 90000
+delguur - chiher - 5000
+delguur - undaa - 8000
+delguur - pivo - 9800
+food - toms - 4000
+food - mah - 9000
+food - budaa - 5000
+transport - bus - 6000
+transport - taxi - 40000
+transport - benzin - 3000
