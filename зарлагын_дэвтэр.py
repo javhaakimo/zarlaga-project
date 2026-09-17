@@ -61,7 +61,7 @@ def Хамгийн_их_зарлага():
             
             name = parts[1].strip()
             amount = int(parts[2])
-            amounts.append((name, amount))
+            amounts.append((amount, name))
             
     return max(amounts)    
 
