@@ -1,17 +1,39 @@
+
+ANGILAL = ["hool", "transport", "delguur", "busad"]
+
+
+ANGILAL = ["hool", "transport", "delguur", "busad"]
+
+
 def Зардал_нэмэх():
     while True:
-        item = input("Төрөл Бараа Үнэ (stop гэж бичвэл зогсоно): ")
+        category = input(
+            "Ангилал (hool / transport / delguur / busad), гарах бол stop: "
+        ).strip().lower()
 
-        if item == "stop":
+        if category == "stop":
             return
 
-        parts = item.split()
-        category = parts[0]
-        name = parts[1]
-        amount = parts[2]
+        if category not in ANGILAL:
+            print("Ангилал зөвхөн:", ", ".join(ANGILAL))
+            continue
 
-        with open("Зардал.txt", "a") as file:
-          file.write(f"{category} - {name} - {amount}\n")
+        item = input("Барааны нэр, үнэ (жишээ: талх 3000): ").strip()
+        parts = item.split()
+
+        if len(parts) != 2:
+            print("Нэр болон үнээ оруулна уу. Жишээ: талх 3000")
+            continue
+
+        name = parts[0]
+        amount = parts[1]
+
+     
+
+        with open("Зардал.txt", "a", encoding="utf-8") as file:
+            file.write(f"{category} - {name} - {int(amount)}\n")
+
+        print("===== Нэмэгдлээ:", name, amount)
         
 def Зардал_харах():
     with open("Зардал.txt", "r") as file:
