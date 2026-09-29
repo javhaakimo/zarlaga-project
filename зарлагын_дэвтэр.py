@@ -87,6 +87,19 @@ def Хамгийн_их_зарлага():
             
     return max(amounts)    
 
+def Хамгийн_бага_зарлага():
+    amounts = []
+    
+    with open("Зардал.txt", "r") as file:
+        for baraaune in file:
+            parts = baraaune.strip().split("-")
+            
+            name = parts[1].strip()
+            amount = int(parts[2])
+            amounts.append((amount, name))
+            
+    return min(amounts)    
+
 def Зардал_цэвэрлэх():
     Батлах = input("===== Бүх зардал устгах уу? yes/no: ")
     
@@ -116,8 +129,9 @@ while True:
     print("4. Нийт дүн")
     print("5. Ангилал тус бүрийн нийт")
     print("6. Хамгийн их зарлага")
-    print("7. Бүх зардал цэвэрлэх")
-    print("8. Нийт зарлагын тоо")
+    print("7. Хамгийн бага зарлага")
+    print("8. Бүх зардал цэвэрлэх")
+    print("9. Нийт зарлагын тоо")
 
     choice = input("Сонголт=====>>>: ")
 
@@ -143,7 +157,10 @@ while True:
         print("===== Хамгийн их зарлага:", Хамгийн_их_зарлага())
         
     elif choice == "7":
-        print(Зардал_цэвэрлэх())
+        print("===== Хамгийн бага зарлага:", Хамгийн_бага_зарлага())
         
     elif choice == "8":
+        print(Зардал_цэвэрлэх())
+        
+    elif choice == "9":
         print("===== Нийт зарлагын тоо", Нийт_зарлагын_тоо())
