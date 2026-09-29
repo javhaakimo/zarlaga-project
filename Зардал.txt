@@ -17,3 +17,4 @@ hool - undaa - 9000
 hool - undaa - 5000
 hool - undaa - 6000
 hool - talh - 5000
+hool - banana - 5000
